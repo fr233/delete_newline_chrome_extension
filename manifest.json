@@ -1,0 +1,24 @@
+{
+  "name": "删除换行",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "author": "drecol",
+  "description": "删除剪切板中的换行",
+  "icons": {
+    "16": "icon16.png"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["https://fanyi.baidu.com/*"],
+      "js": ["cnt.js"]
+    }
+  ],
+  
+  "permissions": ["notifications", "clipboardRead","clipboardWrite"],
+  "web_accessible_resources": ["element-icons.ttf", "element-icons.woff"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "browser_action": {
+    "default_popup": "./popup.html"
+  }
+}
